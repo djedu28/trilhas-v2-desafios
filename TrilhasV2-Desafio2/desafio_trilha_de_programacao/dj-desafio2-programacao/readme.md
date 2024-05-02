@@ -1,24 +1,32 @@
-# No layout apresentado no FIGMA existe um prolema de acessibilidade
+# dicas, problemas e soluções do desafio 2 das trilhas de programação
 
-## PROBLEMA
+## Dicas de como fazer os elementos dos botões de carregar arquivos
+
+Abaixo a estrutura dos componente dos btns enviar arquivos
+
+![imagem com a estrutura dos componente dos btns enviar arquivos](componente_dos_btns_enviar_arquivos.png)
+
+## No layout apresentado no FIGMA existe um prolema de acessibilidade
+
+### PROBLEMA
 
     Quando o input é preenchido a informação do que é solicitado no input 
     é perdida, pois o placeholder some, e não existe um label planejado
     no design apresentado no FIGMA. 
 
-## CASO DE TESTE
+### CASO DE TESTE
 
     Quando é preenchido o campo "Nome Completo", a informação que indica
     que aquele input é do nome completo some da tela.
 
-## SOLUÇÃO DE ACESSIBILIDADE PARA QUANDO O INPUT FOR PREENCHIDO
+### SOLUÇÃO DE ACESSIBILIDADE PARA QUANDO O INPUT FOR PREENCHIDO
 
     Adicionar um evento em todos os inputs, para que quando o input for 
     preenchido aparecer o label do mesmo, e para não ficar informação 
     duplicada em tela, quando o input é vazio, o label é oculto em tela, 
     pois o placeHolder assume o papel de label
 
-### Codigo css
+#### Codigo css
 
 ```css
 .input-container label {
@@ -34,7 +42,7 @@
 }
 ```
 
-### Codigo JS
+#### Codigo JS
 
 1. buscar todos os inputs em tela
 2. percorrer com forEach todos os inputs em tela encontrados no passo anterior
