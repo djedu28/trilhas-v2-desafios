@@ -3,9 +3,9 @@
     margin: 0;
 }
 
-button, input {
+button,
+input {
     background-color: transparent;
-
 }
 
 button {
@@ -22,13 +22,17 @@ input {
     /* border-radius: 5px; */
 }
 
+input[type="file"] {
+    display: none;
+}
+
 form {
     display: flex;
     flex-direction: column;
-    gap:16px;
+    gap: 16px;
 
-    margin-top:35px;
-    
+    margin-top: 35px;
+    margin-bottom: 35px;
 
     /* width: 747px; */
     width: 100%;
@@ -46,15 +50,18 @@ body {
 /* @media (max-width: 600px) {} */
 
 body {
-    display: flex;
+    display: block;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #f37820;
 
-    background-image: url("/assets/imagem.png");
+    background-image: url("./assets/imagem.png");
     background-repeat: no-repeat;
     background-position-x: right;
     background-position-y: center;
+    background-size: contain;
+    background-size: min(80vh, 840px);
+    /* padding-left: 5vw; */
 }
 
 .container-form {
@@ -72,7 +79,7 @@ body {
     align-items: center;
     align-content: center;
 
-    /* background-image: url("/assets/imagem.png");
+    /* background-image: url("./assets/imagem.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-origin: content-box; */
@@ -84,18 +91,20 @@ body {
     justify-content: space-around;
 }
 
-.input-container  {
+.input-container {
     position: relative;
 }
 
 .input-container label {
-    position: absolute; 
+    position: absolute;
     top: 0rem;
     display: none;
 }
+
 .input-container[displayLabel="true"] {
     padding-top: 1rem;
 }
+
 .input-container[displayLabel="true"] label {
     display: block;
 }
@@ -138,14 +147,13 @@ body {
 }
 
 
-.button-main-select {
-
-}
+.button-main-select {}
 
 .form-btns {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    justify-content: center;
     align-items: center;
     padding: 8px;
-    
+    gap:20px
 }
