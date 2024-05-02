@@ -1,0 +1,151 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+button, input {
+    background-color: transparent;
+
+}
+
+button {
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 8px 14px;
+    /* height: 32px; */
+}
+
+input {
+    width: 100%;
+    padding: 4px;
+    /* border: #f37820 1px solid; */
+    /* border-radius: 5px; */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+
+    margin-top:35px;
+    
+
+    /* width: 747px; */
+    width: 100%;
+    border: 1px #000 solid;
+    border-radius: 5px;
+    background-color: #FFF;
+
+    padding: 40px 42px;
+}
+
+body {
+    font-size: 14px;
+}
+
+/* @media (max-width: 600px) {} */
+
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f37820;
+
+    background-image: url("/assets/imagem.png");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+}
+
+.container-form {
+    /* width: 60%; */
+    width: 100%;
+    max-width: 735px;
+}
+
+.container-img {
+    width: 40%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    /* background-image: url("/assets/imagem.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-origin: content-box; */
+    z-index: -1;
+}
+
+.container-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.input-container  {
+    position: relative;
+}
+
+.input-container label {
+    position: absolute; 
+    top: 0rem;
+    display: none;
+}
+.input-container[displayLabel="true"] {
+    padding-top: 1rem;
+}
+.input-container[displayLabel="true"] label {
+    display: block;
+}
+
+.button-file {
+    width: 300px
+}
+
+.button-file-p {
+    height: 21px;
+    margin-bottom: 10px;
+}
+
+.button-main {
+    padding: 16px 9px;
+    border-radius: 5px;
+    border: #000 solid 1px;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.button-context {
+    display: flex;
+    gap: 12px
+}
+
+
+.button-context-img {
+    width: 54px;
+    height: 54px;
+}
+
+
+.button-context-text {
+    width: 120px;
+    text-wrap: balance;
+}
+
+
+.button-main-select {
+
+}
+
+.form-btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    
+}

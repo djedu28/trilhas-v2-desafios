@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 Desafio de programação  do trilhas</title>
+    <link rel="stylesheet" href=".style.css">
+</head>
+
+<body>
+    <div class="container-form">
+        <form>
+            <div class="input-container">
+                <label for="name">Nome Completo</label>
+                <input type="text" name="name" placeholder="Insira seu nome">
+            </div>
+            <div class="input-container">
+                <label for="name">Colocar texto aqui</label>
+                <input name="n1" placeholder="asdasdasda">
+            </div>
+
+            <div class="input-container">
+                <label for="name">Colocar texto aqui</label>
+                <input name="n2" placeholder="asdasdasda">
+            </div>
+
+            <div class="input-container">
+                <label for="name">Colocar texto aqui</label>
+                <input name="n3" placeholder="asdasdasda">
+            </div>
+
+            <div class="container-buttons">
+                <div class="button-file">
+                    <p class="button-file-p">Documento de Identidade</p>
+                    <label class="button-main">
+                        <div class="button-context">
+                            <div class="button-context-img">
+                                <svg width="48" height="44" viewBox="0 0 48 44" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.1875 31.125C-2.99999 32.8125 -1.31249 14.25 12.1875 15.9375C7.12501 -2.625 35.8125 -2.625 34.125 10.875C51 5.8125 51 32.8125 35.8125 31.125M15.5625 24.375L24 17.625M24 17.625L32.4375 24.375M24 17.625V42.9375"
+                                        stroke="#9BCB15" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="button-context-text">
+                                <p>Selecione arquivo ou arraste pra cá</p>
+                                <p style="color: #989692;">JPG, PNG ou PDF</p>
+                            </div>
+                        </div>
+                        <button class="button-main-select">
+                            Selecione
+                        </button>
+                        <input type="file" stype="display:none"/>
+                    </label>
+                </div>
+                <div class="button-file">
+                    <p class="button-file-p">Documento de Identidade</p>
+                    <label class="button-main">
+                        <div class="button-context">
+                            <div class="button-context-img">
+                                <svg width="48" height="44" viewBox="0 0 48 44" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M12.1875 31.125C-2.99999 32.8125 -1.31249 14.25 12.1875 15.9375C7.12501 -2.625 35.8125 -2.625 34.125 10.875C51 5.8125 51 32.8125 35.8125 31.125M15.5625 24.375L24 17.625M24 17.625L32.4375 24.375M24 17.625V42.9375"
+                                        stroke="#9BCB15" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="button-context-text">
+                                <p>Selecione arquivo ou arraste pra cá</p>
+                                <p style="color: #989692;">JPG, PNG ou PDF</p>
+                            </div>
+                        </div>
+                        <button class="button-main-select">
+                            Selecione
+                        </button>
+                        <input type="file" stype="display:none" />
+                    </label>
+                </div>
+            </div>
+            <div class="form-btns">
+                <button type="reset"> cancelar </button>
+                <button type="submit"> enviar </button>
+            </div>
+        </form>
+    </div>
+    <!-- <div class="container-img">
+        <img src="/assets/imagem.png" width="100%">
+    </div> -->
+</body>
+<script>
+    /*
+
+        # No layout apresentado no FIGMA existe um prolema de acessibilidade
+
+        ## PROBLEMA:
+        
+            Quando o input é preenchido a informação do que é solicitado no input 
+            é perdida, pois o placeholder some, e não existe um label planejado
+            no design apresentado no FIGMA. 
+
+        ## CASO DE TESTE:
+            
+            Quando é preenchido o campo "Nome Completo", a informação que indica
+            que aquele input é do nome completo some da tela.
+        
+        ## SOLUÇÃO DE ACESSIBILIDADE PARA QUANDO O INPUT FOR PREENCHIDO:
+        
+            Adicionar um evento em todos os inputs, para que quando o input for 
+            preenchido aparecer o label do mesmo, e para não ficar informação 
+            duplicada em tela, quando o input é vazio, o label é oculto em tela, 
+            pois o placeHolder assume o papel de label
+
+    */
+    // 1. buscar todos os inputs em tela 
+    // 2. percorrer com forEach todos os inputs em tela encontrados no passo anterior
+    // 3. Adicionar um evento onInput em todos os inputs
+    //    Esse evento onInput verifica se a value do input é vazia 
+    //    e baseada nessa informação ativa/desativa a label
+    Array(...document.getElementsByTagName("input"))
+        .forEach(element_input => {
+            element_input.oninput = ({ target }) => {
+                console.log(target.value)
+                if (target.value) {
+                    console.log("ativando", target.name)
+                    target.parentElement.setAttribute("displayLabel", true)
+                } else {
+                    console.log("desativando", target.name)
+                    target.parentElement.setAttribute("displayLabel", false)
+                }
+            }
+        })
+</script>
+
+</html>
