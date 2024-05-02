@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2 Desafio de programação  do trilhas</title>
-    <link rel="stylesheet" href=".style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -13,27 +13,27 @@
         <form>
             <div class="input-container">
                 <label for="name">Nome Completo</label>
-                <input type="text" name="name" placeholder="Insira seu nome">
+                <input type="text" id="name" name="name" placeholder="Insira seu nome">
             </div>
             <div class="input-container">
-                <label for="name">Colocar texto aqui</label>
-                <input name="n1" placeholder="asdasdasda">
-            </div>
-
-            <div class="input-container">
-                <label for="name">Colocar texto aqui</label>
-                <input name="n2" placeholder="asdasdasda">
+                <label for="n1">Colocar texto aqui</label>
+                <input id="n1" name="n1" placeholder="asdasdasda">
             </div>
 
             <div class="input-container">
-                <label for="name">Colocar texto aqui</label>
-                <input name="n3" placeholder="asdasdasda">
+                <label for="n2">Colocar texto aqui</label>
+                <input id="n2" name="n2" placeholder="asdasdasda">
+            </div>
+
+            <div class="input-container">
+                <label for="n3">Colocar texto aqui</label>
+                <input id="n3" name="n3" placeholder="asdasdasda">
             </div>
 
             <div class="container-buttons">
                 <div class="button-file">
                     <p class="button-file-p">Documento de Identidade</p>
-                    <label class="button-main">
+                    <label class="button-main" for="file1">
                         <div class="button-context">
                             <div class="button-context-img">
                                 <svg width="48" height="44" viewBox="0 0 48 44" fill="none"
@@ -49,15 +49,15 @@
                                 <p style="color: #989692;">JPG, PNG ou PDF</p>
                             </div>
                         </div>
-                        <button class="button-main-select">
+                        <button class="button-main-select" onclick="document.getElementById('file1').click()">
                             Selecione
                         </button>
-                        <input type="file" stype="display:none"/>
+                        <input name="file1" id="file1"  type="file"/>
                     </label>
                 </div>
                 <div class="button-file">
                     <p class="button-file-p">Documento de Identidade</p>
-                    <label class="button-main">
+                    <label class="button-main" for="file2">
                         <div class="button-context">
                             <div class="button-context-img">
                                 <svg width="48" height="44" viewBox="0 0 48 44" fill="none"
@@ -73,10 +73,10 @@
                                 <p style="color: #989692;">JPG, PNG ou PDF</p>
                             </div>
                         </div>
-                        <button class="button-main-select">
+                        <button class="button-main-select" onclick="document.getElementById('file2').click()">
                             Selecione
                         </button>
-                        <input type="file" stype="display:none" />
+                        <input name="file2" id="file2" type="file"/>
                     </label>
                 </div>
             </div>
@@ -87,7 +87,7 @@
         </form>
     </div>
     <!-- <div class="container-img">
-        <img src="/assets/imagem.png" width="100%">
+        <img src="./assets/imagem.png" width="100%">
     </div> -->
 </body>
 <script>
