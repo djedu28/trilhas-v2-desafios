@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Rendimento - 2º desafio trilhasV2.1 - Dados - Parte 2 tarefa 2.b)</title>
+</head>
+
+<body>
+    <h1>Cálculo de Rendimento - 2º desafio trilhasV2.1 - Dados - Parte 2 tarefa 2.b)</h1>
+    <p>
+        Para resolver o desafio proposto, vamos criar uma função em JavaScript que solicite ao usuário o valor aplicado e a
+        quantidade de meses em aplicação, aplique a taxa de juros de 0,6022% e exiba o resultado. Caso o valor informado
+        seja inválido, o algoritmo deve solicitar novamente os dados até que sejam fornecidos valores válidos.
+    </p>
+
+    <label>
+        Capital Aplicado:
+        <input type="number" id="capitalAplicado" placeholder="Digite o valor aplicado">
+    </label>
+    <br>
+    <label>
+        Tempo de Aplicação (meses): 
+        <input type="number" id="tempoDeAplicacao" placeholder="Digite o tempo em meses">
+    </label>
+    <br>
+    <button onclick="calcularRendimento()">Calcular Rendimento</button>
+    <br>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularRendimento() {
+            const capitalAplicado = document.getElementById('capitalAplicado').value;
+            const tempoDeAplicacao = document.getElementById('tempoDeAplicacao').value;
+
+            if (capitalAplicado <= 0) {
+                alert("Valor informado inválido! Por favor, informe o valor depositado na poupança.");
+                return;
+            }
+            if (tempoDeAplicacao <= 0) {
+                alert("Valor informado inválido! Por favor, informe o tempo em meses da aplicação");
+                return;
+            }
+
+            let taxaDeJuros = 0.006022; // Taxa padrão de 0.6022%
+
+            // Verifica se o capital aplicado está entre R$999,99 e R$10.000,00 
+            // e o tempo de aplicação entre 6 e 11 meses
+            if (
+                    capitalAplicado >= 999.99   && capitalAplicado  <= 10_000 
+                && tempoDeAplicacao >= 6        && tempoDeAplicacao <= 11
+            ) {
+                taxaDeJuros = 0.02; // 2% ou 2/100
+            }
+
+            const valorRendimento = capitalAplicado * tempoDeAplicacao * taxaDeJuros;
+
+            document.getElementById('resultado').innerText = `
+                A quantia de R\$${capitalAplicado} aplicada em ${tempoDeAplicacao} meses, rendeu R\$${valorRendimento.toFixed(2)}. A juros de ${taxaDeJuros * 100}%.
+            `;
+        }
+    </script>
+</body>
+
+</html>

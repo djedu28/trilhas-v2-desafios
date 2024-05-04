@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Rendimento - 2º desafio trilhasV2.1 - Dados - Parte 2 tarefa 2.b)</title>
+</head>
+
+<body>
+    <h1>Cálculo de Rendimento - 2º desafio trilhasV2.1 - Dados - Parte 2 tarefa 2.b)</h1>
+    <p>
+        Para resolver o desafio proposto na parte c), vamos criar uma função em JavaScript que solicite ao usuário o valor
+        aplicado e a quantidade de meses em aplicação, aplique a taxa de juros de acordo com as condições especificadas e exiba
+        o resultado. Caso o valor informado seja inválido, o algoritmo deve solicitar novamente os dados até que sejam
+        fornecidos valores válidos.
+    </p>
+    <p>As condições são:</p>
+    <pre>
+        i. Condição 1
+        
+        * se o valor da poupança do cliente for maior que R\$ 50.000,00 e menor ou igual R\$100.000,00
+        * e, se o tempo de aplicação for maior que 12 (meses) e menor ou igual a 24(meses),
+        * então a taxa de juro de ser 5\%.
+    </pre>
+    <pre>
+        ii. Condição 2
+        
+        * Caso o tempo de aplicação for maior ou igual a 12 (meses) e menor ou igual a 24 (meses), 
+        a taxa de juros deverá ser de 10\%.
+    </pre>
+    <label>
+        Capital Aplicado: 
+        <input type="number" id="capitalAplicado" placeholder="Digite o valor aplicado">
+        <span> maior que R$ 50000,00  e menor ou igual a R$100000,00 </span>
+    </label>
+    <br>
+    <label>
+        Tempo de Aplicação (meses): 
+        <input type="number" id="tempoDeAplicacao" placeholder="Digite o tempo em meses">
+        <span> deve estar entre 12 e 24 meses</span>
+    </label>
+    <br>
+    <button onclick="calcularRendimento()">Calcular Rendimento</button>
+    <br>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularRendimento() {
+            const capitalAplicado = document.getElementById('capitalAplicado').value;
+            const tempoDeAplicacao = document.getElementById('tempoDeAplicacao').value;
+
+            if (capitalAplicado <= 0) {
+                alert("Valor informado inválido! Por favor, informe o valor depositado na poupança.");
+                return;
+            }
+            if (tempoDeAplicacao <= 0) {
+                alert("Valor informado inválido! Por favor, informe o tempo em meses da aplicação");
+                return;
+            }
+
+            let taxaDeJuros;
+
+            // Verifica se o capital aplicado está entre R$50.000,00 e R$100.000,00 e o tempo de aplicação entre 12 e 24 meses
+            if(capitalAplicado > 50000 && capitalAplicado <= 100000){
+                if (tempoDeAplicacao > 12 && tempoDeAplicacao <= 24) {
+                    taxaDeJuros = 0.05; // 5%
+                } else if (tempoDeAplicacao >= 12 && tempoDeAplicacao <= 24) {
+                    taxaDeJuros = 0.10; // 10%
+                } else {
+                    alert("Valor informado inválido! Por favor, informe o tempo em meses entre 12 e 24 meses");
+                    return;
+                }
+            } else {
+                alert("Valor informado inválido! Por favor, informe o valor depositado na poupança entre R$ 50.001,00 e R$ 100.000,00");
+                return;
+            }
+
+            const valorRendimento = capitalAplicado * tempoDeAplicacao * taxaDeJuros;
+
+            document.getElementById('resultado').innerText = `
+                A poupança de R\$${capitalAplicado} aplicada em ${tempoDeAplicacao} meses, rendeu R\$${valorRendimento.toFixed(2)}. A juros de ${taxaDeJuros * 100}%.
+            `;
+        }
+    </script>
+</body>
+
+</html>
