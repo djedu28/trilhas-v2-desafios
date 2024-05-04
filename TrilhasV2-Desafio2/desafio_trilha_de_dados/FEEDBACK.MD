@@ -1,4 +1,6 @@
-# FEEDBACK
+# FEEDBACK 
+
+<https://github.com/djedu28/trilhas-v2-desafios/blob/desafio2_trilha_de_dados/TrilhasV2-Desafio2/desafio_trilha_de_dados/FEEDBACK.MD>
 
 Os desafios de lógica precisam ser revisados antes de publicar.
 
