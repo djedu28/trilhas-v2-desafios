@@ -148,14 +148,14 @@ Para resolver o desafio proposto, vamos criar uma função em JavaScript que sol
 
     <script>
         function calcularRendimento() {
-            const capitalAplicado = document.getElementById('capitalAplicado').value;
-            const tempoDeAplicacao = document.getElementById('tempoDeAplicacao').value;
+            const capitalAplicado = Number(document.getElementById('capitalAplicado').value);
+            const tempoDeAplicacao = Number(document.getElementById('tempoDeAplicacao').value);
 
-            if (capitalAplicado <= 0) {
+            if (!capitalAplicado || capitalAplicado <= 0) {
                 alert("Valor informado inválido! Por favor, informe o valor depositado na poupança.");
                 return;
             }
-            if (tempoDeAplicacao <= 0) {
+            if (!tempoDeAplicacao || tempoDeAplicacao <= 0) {
                 alert("Valor informado inválido! Por favor, informe o tempo em meses da aplicação");
                 return;
             }
@@ -213,14 +213,14 @@ Para resolver o desafio proposto na parte b), vamos ajustar a função `calcular
 
     <script>
         function calcularRendimento() {
-            const capitalAplicado = document.getElementById('capitalAplicado').value;
-            const tempoDeAplicacao = document.getElementById('tempoDeAplicacao').value;
+            const capitalAplicado = Number(document.getElementById('capitalAplicado').value);
+            const tempoDeAplicacao = Number(document.getElementById('tempoDeAplicacao').value);
 
-            if (capitalAplicado <= 0) {
+            if (!capitalAplicado || capitalAplicado <= 0) {
                 alert("Valor informado inválido! Por favor, informe o valor depositado na poupança.");
                 return;
             }
-            if (tempoDeAplicacao <= 0) {
+            if (!tempoDeAplicacao || tempoDeAplicacao <= 0) {
                 alert("Valor informado inválido! Por favor, informe o tempo em meses da aplicação");
                 return;
             }
@@ -285,12 +285,12 @@ ii. Condição 2
         fornecidos valores válidos.
     </p>
     <p>As condições são:</p>
+    * se o valor da poupança do cliente for maior que R\$ 50.000,00 e menor ou igual R\$100.000,00
+    * e,
     <pre>
         i. Condição 1
-        
-        * se o valor da poupança do cliente for maior que R\$ 50.000,00 e menor ou igual R\$100.000,00
-        * e, se o tempo de aplicação for maior que 12 (meses) e menor ou igual a 24(meses),
-        * então a taxa de juro de ser 5\%.
+        * se: o tempo de aplicação for maior que 12 (meses) e menor ou igual a 24(meses),
+        * então: a taxa de juro de ser 5\%.
     </pre>
     <pre>
         ii. Condição 2
@@ -316,14 +316,14 @@ ii. Condição 2
 
     <script>
         function calcularRendimento() {
-            const capitalAplicado = document.getElementById('capitalAplicado').value;
-            const tempoDeAplicacao = document.getElementById('tempoDeAplicacao').value;
+            const capitalAplicado = Number(document.getElementById('capitalAplicado').value);
+            const tempoDeAplicacao = Number(document.getElementById('tempoDeAplicacao').value);
 
-            if (capitalAplicado <= 0) {
+            if (!capitalAplicado || capitalAplicado <= 0) {
                 alert("Valor informado inválido! Por favor, informe o valor depositado na poupança.");
                 return;
             }
-            if (tempoDeAplicacao <= 0) {
+            if (!tempoDeAplicacao || tempoDeAplicacao <= 0) {
                 alert("Valor informado inválido! Por favor, informe o tempo em meses da aplicação");
                 return;
             }
@@ -334,7 +334,8 @@ ii. Condição 2
             if(capitalAplicado > 50000 && capitalAplicado <= 100000){
                 if (tempoDeAplicacao > 12 && tempoDeAplicacao <= 24) {
                     taxaDeJuros = 0.05; // 5%
-                } else if (tempoDeAplicacao >= 12 && tempoDeAplicacao <= 24) {
+                }
+                if (tempoDeAplicacao >= 12 && tempoDeAplicacao <= 24) {
                     taxaDeJuros = 0.10; // 10%
                 } else {
                     alert("Valor informado inválido! Por favor, informe o tempo em meses entre 12 e 24 meses");

@@ -31,14 +31,14 @@
 
     <script>
         function calcularRendimento() {
-            const capitalAplicado = document.getElementById('capitalAplicado').value;
-            const tempoDeAplicacao = document.getElementById('tempoDeAplicacao').value;
+            const capitalAplicado = Number(document.getElementById('capitalAplicado').value);
+            const tempoDeAplicacao = Number(document.getElementById('tempoDeAplicacao').value);
 
-            if (capitalAplicado <= 0) {
+            if (!capitalAplicado || capitalAplicado <= 0) {
                 alert("Valor informado inválido! Por favor, informe o valor depositado na poupança.");
                 return;
             }
-            if (tempoDeAplicacao <= 0) {
+            if (!tempoDeAplicacao || tempoDeAplicacao <= 0) {
                 alert("Valor informado inválido! Por favor, informe o tempo em meses da aplicação");
                 return;
             }
