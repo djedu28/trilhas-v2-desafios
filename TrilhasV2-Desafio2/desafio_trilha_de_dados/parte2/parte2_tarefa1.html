@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operação - 2º desafio trilhasV2.1 - Dados - Parte 2 tarefa 1</title>
+</head>
+
+<body>
+    <h1>Operação - 2º desafio trilhasV2.1 - Dados - Parte 2 tarefa 1</h1>
+    <h2>
+        1. Elabore um algoritmo que contenha uma função chamada “Operacao”, a qual recebe 2 parâmetros e, após as
+        operações, imprima a soma da exponenciação, o resto da divisão do primeiro pelo segundo e a subtração do segundo
+        pelo primeiro.
+    </h2>
+    <label> A: <input type="number" id="valorA" placeholder="Digite o valor de A"></label><br/>
+    <label> B: <input type="number" id="valorB" placeholder="Digite o valor de B"></label><br/>
+    <br/>
+    <button onclick="executarOperacao()">Executar Operação</button><br/>
+    <div id="resultado"></div>
+
+    <script>
+        function Operacao(a, b) {
+            const somaExponenciacao = Math.pow(a, b) + Math.pow(b, a);
+            const restoDivisao = a % b;
+            const subtracao = b - a;
+
+            return {
+                somaExponenciacao,
+                restoDivisao,
+                subtracao
+            };
+        }
+
+        function executarOperacao() {
+            const valorA = document.getElementById('valorA').value;
+            const valorB = document.getElementById('valorB').value;
+
+            const resultado = Operacao(valorA, valorB);
+
+            document.getElementById('resultado').innerHTML = `
+            <ul>
+                <strong>RESULTADO:</strong>
+                <li>Soma da exponenciação: ${resultado.somaExponenciacao}</li>
+                <li>Resto da divisão do primeiro pelo segundo: ${resultado.restoDivisao}</li>
+                <li>Subtração do segundo pelo primeiro: ${resultado.subtracao}</li>
+            <ul>
+            `;
+        }
+    </script>
+</body>
+
+</html>

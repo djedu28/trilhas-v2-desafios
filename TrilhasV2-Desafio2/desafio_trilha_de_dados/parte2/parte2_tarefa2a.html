@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Rendimento - 2º desafio trilhasV2.1 - Dados - Parte 2 tarefa 2.a)</title>
+</head>
+
+<body>
+    <h1>Cálculo de Rendimento - 2º desafio trilhasV2.1 - Dados - Parte 2 tarefa 2.a)</h1>
+
+    <label>
+        Capital Aplicado:
+        <input type="number" id="capitalAplicado" placeholder="Digite o valor aplicado">
+    </label>
+    <br>
+    <label>
+        Tempo de Aplicação (meses):
+        <input type="number" id="tempoDeAplicacao" placeholder="Digite o tempo em meses">
+    </label>
+    <br>
+    <button onclick="calcularRendimento()">Calcular Rendimento</button>
+    <br>
+    <div id="resultado"></div>
+
+    <script>
+        function calcularRendimento() {
+            const capitalAplicado = Number(document.getElementById('capitalAplicado').value);
+            const tempoDeAplicacao = Number(document.getElementById('tempoDeAplicacao').value);
+
+            if (!capitalAplicado || capitalAplicado <= 0) {
+                alert("Valor informado inválido! Por favor, informe o valor depositado na poupança.");
+                return;
+            }
+            if (!tempoDeAplicacao || tempoDeAplicacao <= 0) {
+                alert("Valor informado inválido! Por favor, informe o tempo em meses da aplicação");
+                return;
+            }
+
+            const taxaDeJuros = 0.006022; // 0.6022%
+            const valorRendimento = capitalAplicado * tempoDeAplicacao * taxaDeJuros;
+
+            document.getElementById('resultado').innerText = `
+                A quantia de R\$${capitalAplicado} aplicada em ${tempoDeAplicacao} meses, rendeu R\$${valorRendimento.toFixed(2)} a juros de ${taxaDeJuros * 100}%.
+            `;
+        }
+    </script>
+</body>
+
+</html>
