@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        /* resetando o css */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* ===================================================================== */
+        /* estilizando elementos gerais (compartilhados entre telas) */
+        body {
+            padding: 2rem 1rem;
+            font-size: 16px;
+        }
+        header {
+            /* colorindo o fundo só para identificar o header em tela */
+            background: rgb(162, 162, 255);
+        }
+        footer {
+            /* colorindo o fundo só para identificar o footer em tela */
+            background: rgb(162, 162, 255);
+        }
+        #main {
+            /* colorindo o fundo só para identificar o main em tela */
+            background: rgb(255, 216, 145);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap:10px;
+        }
+        
+        button {
+            padding: 5px 16px;
+            background-color: transparent;
+            border-radius: 5px;
+        }
+        section {
+            display: flex;
+        }
+        /**
+          * exemplo de  media query para responsividade de telas
+          * o padrão do display: flex alinha as coisas na mesma linha, 
+          * e para telas pequenas colocamos para alinhar as coisas em linhas 
+          * diferentes (a imagem seguida do texto alinhada verticalmente)
+        */
+        @media (max-width: 700px) {
+            section {
+                flex-direction: column-reverse;
+            } 
+        }
+        /* ===================================================================== */
+        /* estilizando elementos da tela atual */
+        #container-img-com-sombra{
+            position: relative;
+            /* height: 532px; */
+            max-width: 500px;
+            /* max-height: 300px; */
+            width: fit-content;
+            height: fit-content;
+            margin: 20px; 
+            /* para espaçar a borda dos eleantos vizinhos */
+        }
+        
+        #img-sombra {
+            /* espaçando sombra em relação container-img-com-sombra*/
+            position: absolute;
+            top:-20px;
+            left: 20px;
+            
+            /* ocupando o máximo disponível em tela, tamanho definido pela imagem */
+            height: 100%;
+            width: 100%;
+            /* aplicando borda */
+            border: 3px solid red;
+            border-radius: 16px;
+        }
+        #img-eu {
+            /* ocupando o máximo disponível em tela, tamanho definido pela imagem */
+            height: 100%;
+            width: 100%;
+            
+            /* inserindo imagem em tela com background (outra forma de fazer)*/
+            /* background-image: url("eu.png");
+            background-repeat: no-repeat;
+            background-size: contain; */
+
+            border-radius: 16px;
+        }
+        /* container com o nome da pessoa, descrição e botões */
+        #container-textos {
+            display: flex;
+            gap:16px;
+            flex-direction: column;
+        }
+        /* container dos botões da rede social */
+        #container-btns-social{
+            margin: 0 auto;
+            max-width: 250px;
+            display: flex;
+            gap:16px;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        /* botões (da rede social), dentro de container-btns-social */
+        #container-btns-social button {
+            /* background-color: red; */
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- cabeçalho que se repete em todos as paginas -->
+
+    <header> 
+        <nav>
+            <a href="index.html"> Home</a>
+            <a href="habilidades.html"> habilidades</a>
+            <a href="projetos.html"> projetos</a>
+        </nav>
+    </header>
+
+    <!-- conteúdo que é diferente em todas as paginas -->
+    <section id="main">
+
+        <div id="container-textos">
+            <!-- nome da pessoa -->
+            <h1>Eduardo Santos</h1>
+            <!-- texto aqui -->
+            <p>
+                Olá! Sou a Eduardo! Lorem Ipsum vivamus urna nisi, lobortis ut euismod in, sollicitudin ac ipsum. Mauris a libero id velit pulvinar
+                scelerisque at quis magna. Aliquam erat volutpat.
+            </p>
+            <!-- botões da rede sociais -->
+            <div id="container-btns-social">
+                <p>acesse as redes socais</p>
+                <button>github</button>
+                <button>LinkedIn</button>
+            </div>
+        </div>
+
+        <div id="container-image">
+            <div id="container-img-com-sombra">
+                <div id="img-sombra"></div>
+                <img id="img-eu" src="eu.png"/>
+                <!-- <div id="img-eu"></div> -->
+            </div>
+        </div>
+
+    </section>
+    <!-- rodapé que se repete em todos as paginas -->
+    <footer> 
+        <img src="logo-alura-Include.png">
+        <p> 2024 &copy Desenvolvido por Eduardo Santos. </p>
+    </footer>
+</body>
+</html>
